@@ -185,6 +185,10 @@ public class CallFeaturesSetting extends PreferenceActivity
     private static final String BUTTON_GSM_UMTS_OPTIONS = "button_gsm_more_expand_key";
     private static final String BUTTON_CDMA_OPTIONS = "button_cdma_more_expand_key";
 
+   private static final String BUTTON_VOICE_QUALITY_KEY = "button_voice_quality_key";
+    private static String mVoiceQuality;
+    private static String mButtonVoiceQualitySum;
+
     private static final String VM_NUMBERS_SHARED_PREFERENCES_NAME = "vm_numbers";
 
     private static final String BUTTON_SIP_CALL_OPTIONS =
