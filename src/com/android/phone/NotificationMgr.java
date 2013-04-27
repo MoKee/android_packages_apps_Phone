@@ -578,6 +578,11 @@ public class NotificationMgr implements CallerInfoAsyncQuery.OnQueryCompleteList
                 + ", date: " + date);
         }
 
+        // title resource id
+        int titleResId;
+        // the text in the notification's line 1 and 2.
+        String expandedText;
+
         // get the name for the ticker text
         // i.e. "Missed call from <caller name or number>"
         String callName;
@@ -606,8 +611,6 @@ public class NotificationMgr implements CallerInfoAsyncQuery.OnQueryCompleteList
              builder.setSmallIcon(android.R.drawable.stat_notify_missed_call)
                 .setTicker(mContext.getString(R.string.notification_missedCallTicker, callName))
                 .setWhen(date)
-                .setContentTitle(mContext.getText(titleResId))
-                .setContentText(expandedText)
                 .setContentIntent(PendingIntent.getActivity(mContext, 0, callLogIntent, 0))
                 .setAutoCancel(true)
                 .setDeleteIntent(createClearMissedCallsIntent());
