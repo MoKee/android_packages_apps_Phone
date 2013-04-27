@@ -578,6 +578,11 @@ public class NotificationMgr implements CallerInfoAsyncQuery.OnQueryCompleteList
                 + ", date: " + date);
         }
 
+        // title resource id
+        int titleResId;
+        // the text in the notification's line 1 and 2.
+        String expandedText;
+
         // get the name for the ticker text
         // i.e. "Missed call from <caller name or number>"
         String callName;
@@ -589,6 +594,9 @@ public class NotificationMgr implements CallerInfoAsyncQuery.OnQueryCompleteList
             // use "unknown" if the caller is unidentifiable.
             callName = mContext.getString(R.string.unknown);
         }
+
+        titleResId = R.string.notification_missedCallsTitle;
+        expandedText = callName;
 
         // keep track of the call, keeping list sorted from newest to oldest
         mMissedCalls.add(0, new MissedCallInfo(callName, number, date));
